@@ -72,7 +72,6 @@
                                     {{ Auth::guard('admin')->user()->name }} (ADMIN) <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
-                                    <a href="{{route('admin.home')}}" class="dropdown-item">Dashboard</a>
                                     <a class="dropdown-item" href="#" onclick="event.preventDefault();document.querySelector('#admin-logout-form').submit();">
                                         Logout
                                     </a>

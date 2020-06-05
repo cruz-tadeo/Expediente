@@ -16,31 +16,33 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::namespace('Auth')->group(function (){
+    Route::get('/inicio', function (){
+        $id = Auth::id();
+        $doctor = \App\Doctor::where('user_id','=',$id)->first();
+        $clinica = \App\Clinica::where('user_id','=',$id)->first();
+        return view('layout',array(
+            'doctor'=>$doctor,
+            'clinica'=>$clinica
+        ));
+    });
+});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::post('/doctor/register', 'DoctorController@register')->name('register');
-Route::get('/registro', 'DoctorController@registro')->name('registro');
-
-Route::get('/datos', 'DoctorController@datosDoctor');
-Route::resource('/pacientes','PacienteController');
-
-Route::get('/registro/paciente', function (){
-    return view('pacientes.registro');
-});
-
+//ADMINISTRADORES
 Route::prefix('/admin')->group(function(){
-    Route::post('register', 'AdministradorController@register')->name('admin-register');
     Route::namespace('admin')->group(function () {
         Route::get('/login','LoginController@showLoginForm')->name('admin-login');
         Route::post('/login','LoginController@login');
-        Route::post('/logout',function (){
-            Auth::guard('admin')->logout();
-            return redirect('admin/login');
-        })->name('admin.logout');
         Route::get('/area', 'LoginController@secret');
     });
-
 });
+
+//Doctores
+Route::get('/registro', 'DoctorController@registro')->name('registro');
+Route::post('register', 'DoctorController@register')->name('register');
+
+
+//Pacientes
+Route::resource('/paciente','PacienteController');

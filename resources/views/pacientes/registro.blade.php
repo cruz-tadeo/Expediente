@@ -32,43 +32,43 @@
                     <div class="card-body">
                     <!--<form action="{{ url('inicio') }}" method="POST">
                                         {{ csrf_field() }}-->
-                        <form>
+                        <form action="{{url('/paciente')}}" method="post">
+                            @csrf
                             <div class="row">
-
                                 <div class="col-lg-4 col-md-12">
                                     <div class="form-group">
                                         <label for="formGroupInput">Nombre(s)</label>
-                                        <input name="Nombre" type="text" class="form-control" id="formGroupInput" placeholder="" pattern="[A-Za-z]+" required>
+                                        <input name="nombre" type="text" class="form-control" id="formGroupInput" placeholder=""  required>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="formGroupInput2">Apellido Paterno</label>
-                                        <input name="APaterno" type="text" class="form-control" id="formGroupInput2" placeholder="" pattern="[A-Za-z]+" required>
+                                        <input name="aPaterno" type="text" class="form-control" id="formGroupInput2" placeholder=""  required>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="formGroupInput3">Apellido Materno</label>
-                                        <input name="AMaterno" type="text" class="form-control" id="formGroupInput3" placeholder="" pattern="[A-Za-z]+" required>
+                                        <input name="aMaterno" type="text" class="form-control" id="formGroupInput3" placeholder=""required>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="formGroupInput3">Sexo</label>
-                                        <input name="sexo" type="text" class="form-control" id="formGroupInput3" placeholder="" pattern="[A-Za-z]+" required>
+                                        <input name="sexo" type="text" class="form-control" id="formGroupInput3" placeholder=""  required>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="formGroupInput3">Entidad de nacimiento</label>
-                                        <input name="Entidad_federativa" type="text" class="form-control" id="formGroupInput3" placeholder="" pattern="[A-Za-z]+" required>
+                                        <input name="entidad_federativa" type="text" class="form-control" id="formGroupInput3" placeholder=""  required>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="formGroupInput3">Curp</label>
-                                        <input name="Curp" type="text" class="form-control" id="formGroupInput3" placeholder="" pattern="[A-Za-z]+" required>
+                                        <input name="curp" type="text" class="form-control" id="formGroupInput3" placeholder=""  required>
                                     </div>
                                 </div>
                             </div>
@@ -76,19 +76,19 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="userdate">Fecha de nacimiento</label>
-                                        <input name="F_nacimiento" type="date" class="form-control" id="userdate" name="date" required>
+                                        <input name="f_nacimiento" type="date" class="form-control" id="userdate" name="date" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="formGroupInput4">Teléfono</label>
-                                        <input name="Telefono" type="tel" class="form-control" id="formGroupInput4" placeholder="" pattern="[0-9]+">
+                                        <input name="telefono" type="tel" class="form-control" id="formGroupInput4" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="formGroupInput5">Celular(Móvil)</label>
-                                        <input name="celular" type="tel" class="form-control" id="formGroupInput5" placeholder="" pattern="[0-9]+">
+                                        <input name="celular" type="tel" class="form-control" id="formGroupInput5" placeholder="" >
                                     </div>
                                 </div>
                             </div>
@@ -96,13 +96,13 @@
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="FormControlInput1">Correo Electrónico</label>
-                                        <input name="Correo" type="email" class="form-control" id="FormControlInput1" placeholder="correo@ejemplo.com" required>
+                                        <input name="correo" type="email" class="form-control" id="FormControlInput1" placeholder="correo@ejemplo.com" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-4 col-md-6">
                                     <div class="form-group">
                                         <label for="FormControlInput1">Medico Que Le Atendera</label>
-                                        <input name="Nombre" type="text" class="form-control" id="FormControlInput1" >
+                                        <input name="medico" type="text" class="form-control" id="FormControlInput1" >
                                     </div>
                                 </div>
                             </div>
@@ -116,18 +116,5 @@
                 </div>
             </div>
         </div>
-        <!--<div class="card-body" style="padding-top: 0em; padding-bottom: 0em;">
-            <div class="row">
-                <div class="col-lg-4 col-md-4  col-sm-4 col-xs-12">
-                    <div class="form-group">
-                        <label for="FormControlSelect1">Tipo de cuenta</label>
-                        <select class="form-control" id="FormControlSelect1">
-                            <option value="0">Cuenta Individual</option>
-                            <option value="1">Cuenta Empresarial</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>-->
     </div>
 @endsection

@@ -20,9 +20,6 @@
                                        aria-controls="pills-home" aria-selected="true">Doctor</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link"><i class="fas fa-info-circle"></i></a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" style="border-radius: 0px 5px 5px 0px" id="pills-profile-tab"
                                        data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
                                        aria-selected="false">Clinica</a>
@@ -40,7 +37,7 @@
                             <p style="color: Grey; font-size: 15px;">La cuenta "personal" esta pensada para profesionales que desean integrarse a la plataforma y trabajar de forma individual.</p>
                         </div>-->
                         <div class="card-body">
-                            <form id=formulariousuario method="POST" action="{{ url('/doctor/register') }}">
+                            <form id=formulariousuario method="POST" action="{{ url('register') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-auto col-md-12">
@@ -380,7 +377,7 @@
                             <p style="color: Grey; font-size: 15px;">La cuenta...</p>
                         </div>-->
                         <div class="card-body">
-                            <form id="formularioempresa" method="post" action="{{ url('/admin/register') }}">
+                            <form id="formularioempresa" method="post" action="{{ url('register') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-4 col-md-6">

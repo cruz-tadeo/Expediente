@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     protected function authenticated()
     {
-        return view('home');
+        return redirect('inicio');
     }
 
     public function username()

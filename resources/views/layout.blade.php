@@ -29,6 +29,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
+            <li class="mt-2">
+                @if(isset($doctor))
+                    <a class="">{{$doctor->prefijo}}</a>
+                    <a href="" style="color: black">{{$doctor->nombre}}</a>
+                @elseif(isset($clinica))
+                    <a href="" style="color: black">Clinica <span>{{$clinica->razon_social}}</span></a>
+                @endif
+            </li>
         </ul>
 
         <!-- SEARCH FORM -->
@@ -45,22 +53,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-            <a class="dropdown-item" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
+            <li class="nav-item dropdown">
+                @if(\Illuminate\Support\Facades\Auth::guard('admin')->check())
+                    <a id="adminDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" v-pre>
+                        ADMIN <span class="caret"></span>
+                    </a>
+                @else
+                    <a id="adminDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" v-pre>
+                        User <span class="caret"></span>
+                    </a>
+                @endif
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
+                    <a class="dropdown-item" href="#"
+                       onclick="event.preventDefault();document.querySelector('#admin-logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="admin-logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
         </ul>
+
     </nav>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="{{url('/home')}}" class="brand-link">
+        <a href="#" class="brand-link">
             <img src="{{asset("dist/img/AdminLTELogo.png")}}" alt="AdminLTE Logo"
                  class="brand-image img-circle elevation-3"
                  style="opacity: .8">
@@ -70,46 +93,67 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Sidebar -->
         <div class="sidebar">
             <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="info">
-                    @if(\Illuminate\Support\Facades\Auth::guard('admin')->check())
-                        <h5 style="color: #ffffff">Administrador </h5>
-                        <h6 style="color: #ffffff"> {{\Illuminate\Support\Facades\Auth::guard('admin')->user()->username}}</h6>
-                    @else
-                        <h5 style="color: #ffffff">Usuario</h5>
-                        <h6 style="color: #ffffff"> {{\Illuminate\Support\Facades\Auth::user()->username}}</h6>
-                    @endif
-                </div>
-            </div>
-            <!-- Sidebar Menu -->
-            <nav class="mt-2">
+            @if(\Illuminate\Support\Facades\Auth::guard('admin')->check())
+                <h5 style="color: #ffffff">Administrador </h5>
+            @else
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-                         with font-awesome or any other icon font library -->
-                    @if(\Illuminate\Support\Facades\Auth::guard('admin')->check())
                     <li class="nav-item">
-                        <a href="{{url('/administrators/users')}}" class="nav-link ">
-                            <i class="fas fa-users"></i>
+                        <a href="{{url('/inicio')}}" class="nav-link">
+                            <i class="fas fa-house-user"></i>
                             <p>
-                                Administrar Usuarios
+                                Inicio
                             </p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-key"></i>
+                            <i class="fas fa-user"></i>
                             <p>
-                                Cambiar Contraseña
+                                Mi cuenta
                             </p>
                         </a>
                     </li>
+                </ul>
+        @endif
+            <hr style="background-color: #ffffff">
+        <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+                    @if(Auth::guard('admin')->check())
+                        <li class="nav-item">
+                            <a href="{{url('/administrators/users')}}" class="nav-link ">
+                                <i class="fas fa-users"></i>
+                                <p>
+                                    Administrar Usuarios
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-key"></i>
+                                <p>
+                                    Cambiar Contraseña
+                                </p>
+                            </a>
+                        </li>
                     @else
+                        <li class="nav-item">
+                            <a href="{{url('/paciente')}}" class="nav-link">
+                                <i class="fas fa-user-plus"></i>
+                                <p>
+                                    Crear Paciente
+                                </p>
+                            </a>
+                        </li>
                         <li class="nav-item">
                             <a href="{{url('/registro/paciente')}}" class="nav-link">
                                 <i class="fas fa-hospital-user"></i>
                                 <p>
-                                    Crear Paciente
+                                    Expediente Clinico
                                 </p>
                             </a>
                         </li>

@@ -3,6 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="79f4b1fb-3a8a-42eb-8777-4b95b82ec858" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdministradorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DoctorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DoctorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PacienteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PacienteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Paciente.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Paciente.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pacientes/registro.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pacientes/registro.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,12 +144,13 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Proyectos laravel\Administradores\resources\views\admin\auth" />
-      <recent name="E:\Proyectos laravel\Administradores\resources\views" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Proyectos laravel\Administradores\resources\views\admin" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Proyectos laravel\Expediente\resources\views" />
+      <recent name="E:\Proyectos laravel\Administradores\resources\views\admin\auth" />
+      <recent name="E:\Proyectos laravel\Administradores\resources\views" />
       <recent name="E:\Proyectos laravel\Administradores\resources\views\admin" />
     </key>
   </component>
@@ -162,7 +177,7 @@
       <workItem from="1589936027650" duration="5000" />
       <workItem from="1589938445543" duration="22184000" />
       <workItem from="1590359644293" duration="82000" />
-      <workItem from="1591216516811" duration="654000" />
+      <workItem from="1591216516811" duration="16028000" />
     </task>
     <servers />
   </component>
@@ -174,17 +189,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="97" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1590000824454" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590003407513">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591225262539">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1590003407513" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591225262539" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1589850994656">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589850994656" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589939264265">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1591252263801">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589939264265" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591252263801" />
   </component>
 </project>
