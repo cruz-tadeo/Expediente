@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Clinica;
 use App\Admin;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class AdministradorController extends Controller
 {
@@ -37,5 +41,33 @@ class AdministradorController extends Controller
     public function registro()
     {
         return view('admin.auth.register');
+    }
+
+    public function manager()
+    {
+        $users = User::all();
+        return view('admin/manager')->with('users', $users);
+    }
+
+    public function editUser($id)
+    {
+
+        $user = User::find($id);
+        $roles = Role::all();
+        $data = [$user, $roles];
+
+        return view('admin/editUser')->with('data', $data);
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $user = User::find($id);
+        $roles = Role::all();
+        $rol = $user->getRoleNames()->first();
+        $user->removeRole($rol);
+        $user->assignRole($request->roles);
+        $user->update();
+        $message = 'Rol Actualizado Correctamente';
+        return redirect('admin/user-manager')->with('message', $message);
     }
 }

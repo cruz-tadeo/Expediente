@@ -89,7 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                          with font-awesome or any other icon font library -->
                     @if(\Illuminate\Support\Facades\Auth::guard('admin')->check())
                     <li class="nav-item">
-                        <a href="{{url('/administrators/users')}}" class="nav-link ">
+                        <a href="{{route('user-manager')}}" class="nav-link ">
                             <i class="fas fa-users"></i>
                             <p>
                                 Administrar Usuarios
